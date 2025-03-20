@@ -1,0 +1,70 @@
+ClassificationThis
+MonthCurrent
+Fiscal Year
+to DateComparable
+Prior Period
+Year to DateBudget
+Estimates
+Full Fiscal
+Year1Table 3. Summary of Receipts and Outlays of the U.S. Government, February 2024 and Other Periods
+[$ millions]
+Budget Receipts
+  Individual Income Taxes 120,884 928,473 878,864 2,355,223
+  Corporation Income Taxes 4,888 174,465 128,507 663,613
+  Social Insurance and Retirement Receipts:
+    Employment and General Retirement (Off-Budget) 97,783 486,408 456,471 1,207,336
+    Employment and General Retirement (On-Budget) 27,736 159,934 152,106 505,882
+    Unemployment Insurance 3,078 13,553 15,836 52,744
+    Other Retirement 612 3,027 2,662 7,592
+  Excise Taxes 6,675 35,207 32,374 108,069
+  Estate and Gift Taxes 1,550 13,058 18,779 29,594
+  Customs Duties 6,208 31,628 35,074 60,641
+  Miscellaneous Receipts 1,712 10,266 14,283 36,865
+  Total Receipts 271,126 1,856,020 1,734,955 5,027,559
+    (On-Budget) 173,343 1,369,612 1,278,484 3,820,223
+    (Off-Budget) 97,783 486,408 456,471 1,207,336
+Budget Outlays
+  Legislative Branch 524 2,805 2,835 7,396
+  Judicial Branch 720 3,758 3,547 10,220
+  Department of Agriculture 16,819 97,023 114,182 232,584
+  Department of Commerce 804 5,176 4,772 20,356
+  Department of Defense--Military Programs 61,335 344,113 306,874 848,565
+  Department of Education 13,696 71,003 86,087 183,694
+  Department of Energy 3,872 19,880 11,448 58,538
+  Department of Health and Human Services 144,219 667,090 642,291 1,710,722
+  Department of Homeland Security 7,070 35,781 36,588 99,793
+  Department of Housing and Urban Development 5,406 26,999 23,817 80,307
+  Department of the Interior 1,261 7,238 6,073 25,765
+  Department of Justice 3,523 17,856 17,035 51,359
+  Department of Labor 5,277 19,179 54,052 76,630
+  Department of State 2,979 14,193 12,505 36,833
+  Department of Transportation 8,127 42,553 40,513 125,315
+  Department of the Treasury:
+    Interest on Treasury Debt Securities (Gross) 76,162 433,369 306,648 1,002,503
+    Other 53,616 97,521 125,199 438,826
+  Department of Veterans Affairs 27,217 122,076 104,865 324,204
+  Corps of Engineers 702 4,711 3,690 8,316
+  Other Defense Civil Programs 6,178 26,039 25,024 72,668
+  Environmental Protection Agency 994 5,139 3,810 38,625
+  Executive Office of the President 53 237 199 658
+  General Services Administration -300 -430 -551 252
+  International Assistance Programs 866 11,896 15,449 33,070
+  National Aeronautics and Space Administration 1,779 10,316 10,081 25,898
+  National Science Foundation 727 3,471 3,244 10,652
+  Office of Personnel Management 9,674 52,902 50,314 129,377
+  Small Business Administration 72 732 920 1,906
+  Social Security Administration 126,328 613,745 560,899 1,518,317
+  Independent Agencies 4,022 78,396 17,108 30,307
+  Allowances ...... ...... ...... 13,974
+  Undistributed Offsetting Receipts:
+    Interest -7,234 -74,533 -66,837 -163,356
+    Other -9,087 -76,079 -65,100 -149,506
+  Total Outlays 567,401 2,684,155 2,457,583 6,904,768
+    (On-Budget) 448,054 2,160,460 1,983,269 5,593,840
+    (Off-Budget) 119,347 523,695 474,314 1,310,928
+  Surplus (+) or Deficit (-) -296,275 -828,135 -722,627 -1,877,209
+    (On-Budget) -274,711 -790,848 -704,784 -1,773,617
+    (Off-Budget) -21,564 -37,287 -17,843 -103,592
+1These estimates are based on the FY 2024 Mid-Session Review, released by the Note: Details may not add to totals due to rounding.
+Office of Management and Budget on July 28, 2023. ... No Transactions
+9

@@ -1,0 +1,143 @@
+{
+  "period": "February 2025",
+  "month": "February",
+  "year": "2025",
+  "departments": [
+    {
+      "department": "Department of Homeland Security",
+      "this_month": 10273000000,
+      "fiscal_year_to_date": 51408000000,
+      "prior_period": 35781000000,
+      "budget_estimate": 88192000000,
+      "ratio_percentage": 11.65
+    },
+    {
+      "department": "Department of Labor",
+      "this_month": 6837000000,
+      "fiscal_year_to_date": 24854000000,
+      "prior_period": 19179000000,
+      "budget_estimate": 62477000000,
+      "ratio_percentage": 10.94
+    },
+    {
+      "department": "Social Security Administration",
+      "this_month": 134036000000,
+      "fiscal_year_to_date": 662770000000,
+      "prior_period": 613745000000,
+      "budget_estimate": 1628325000000,
+      "ratio_percentage": 8.23
+    },
+    {
+      "department": "Department of Justice",
+      "this_month": 4146000000,
+      "fiscal_year_to_date": 18578000000,
+      "prior_period": 17856000000,
+      "budget_estimate": 50967000000,
+      "ratio_percentage": 8.13
+    },
+    {
+      "department": "Department of Veterans Affairs",
+      "this_month": 30819000000,
+      "fiscal_year_to_date": 169496000000,
+      "prior_period": 122076000000,
+      "budget_estimate": 388623000000,
+      "ratio_percentage": 7.93
+    },
+    {
+      "department": "Legislative Branch",
+      "this_month": 599000000,
+      "fiscal_year_to_date": 2981000000,
+      "prior_period": 2805000000,
+      "budget_estimate": 7636000000,
+      "ratio_percentage": 7.84
+    },
+    {
+      "department": "Department of Health and Human Services",
+      "this_month": 145068000000,
+      "fiscal_year_to_date": 802110000000,
+      "prior_period": 667090000000,
+      "budget_estimate": 1868528000000,
+      "ratio_percentage": 7.76
+    },
+    {
+      "department": "Department of Housing and Urban Development",
+      "this_month": 6022000000,
+      "fiscal_year_to_date": 28432000000,
+      "prior_period": 26999000000,
+      "budget_estimate": 77742000000,
+      "ratio_percentage": 7.75
+    },
+    {
+      "department": "Judicial Branch",
+      "this_month": 771000000,
+      "fiscal_year_to_date": 4099000000,
+      "prior_period": 3758000000,
+      "budget_estimate": 10348000000,
+      "ratio_percentage": 7.45
+    },
+    {
+      "department": "Department of Agriculture",
+      "this_month": 15561000000,
+      "fiscal_year_to_date": 102700000000,
+      "prior_period": 97023000000,
+      "budget_estimate": 228347000000,
+      "ratio_percentage": 6.81
+    },
+    {
+      "department": "Department of the Interior",
+      "this_month": 1550000000,
+      "fiscal_year_to_date": 9911000000,
+      "prior_period": 7238000000,
+      "budget_estimate": 22757000000,
+      "ratio_percentage": 6.81
+    },
+    {
+      "department": "Department of Transportation",
+      "this_month": 8116000000,
+      "fiscal_year_to_date": 47265000000,
+      "prior_period": 42553000000,
+      "budget_estimate": 130604000000,
+      "ratio_percentage": 6.21
+    },
+    {
+      "department": "Department of Energy",
+      "this_month": 3782000000,
+      "fiscal_year_to_date": 22571000000,
+      "prior_period": 19880000000,
+      "budget_estimate": 63466000000,
+      "ratio_percentage": 5.96
+    },
+    {
+      "department": "Department of Education",
+      "this_month": 8141000000,
+      "fiscal_year_to_date": 70781000000,
+      "prior_period": 71003000000,
+      "budget_estimate": 157959000000,
+      "ratio_percentage": 5.15
+    },
+    {
+      "department": "Department of Commerce",
+      "this_month": 1344000000,
+      "fiscal_year_to_date": 10661000000,
+      "prior_period": 5176000000,
+      "budget_estimate": 33523000000,
+      "ratio_percentage": 4.01
+    },
+    {
+      "department": "Department of State",
+      "this_month": 1407000000,
+      "fiscal_year_to_date": 13165000000,
+      "prior_period": 14193000000,
+      "budget_estimate": 37623000000,
+      "ratio_percentage": 3.74
+    },
+    {
+      "department": "Environmental Protection Agency",
+      "this_month": 1186000000,
+      "fiscal_year_to_date": 27033000000,
+      "prior_period": 5139000000,
+      "budget_estimate": 39669000000,
+      "ratio_percentage": 2.99
+    }
+  ]
+}

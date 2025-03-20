@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   DocumentTextIcon,
   ArrowsRightLeftIcon,
@@ -8,6 +8,13 @@ import {
 } from "@heroicons/react/24/outline";
 import { SelectMenu } from "@/components/SelectMenu";
 import { ComparisonResults } from "@/components/ComparisonResults";
+import {
+  getStatements,
+  processStatement,
+  compareStatements,
+  StatementMetadata,
+  ComparisonResult,
+} from "@/lib/api";
 
 // Custom icon styling to override defaults
 const iconStyles = {
@@ -45,29 +52,13 @@ const iconStyles = {
   },
 };
 
-// Sample period options
-const periodOptions = [
-  { id: "mar-2025", name: "March 2025" },
-  { id: "feb-2025", name: "February 2025" },
-  { id: "jan-2025", name: "January 2025" },
-  { id: "dec-2024", name: "December 2024" },
-  { id: "nov-2024", name: "November 2024" },
-  { id: "oct-2024", name: "October 2024" },
-  { id: "sep-2024", name: "September 2024" },
-  { id: "aug-2024", name: "August 2024" },
-  { id: "jul-2024", name: "July 2024" },
-  { id: "jun-2024", name: "June 2024" },
-  { id: "may-2024", name: "May 2024" },
-  { id: "apr-2024", name: "April 2024" },
-  { id: "mar-2024", name: "March 2024" },
-  { id: "feb-2024", name: "February 2024" },
-  { id: "jan-2024", name: "January 2024" },
-];
-
-// Use the same options for comparison dropdown
-const comparisonOptions = [...periodOptions];
-
 export default function Home() {
+  // Statement data state
+  const [statements, setStatements] = useState<StatementMetadata[]>([]);
+  const [isLoadingStatements, setIsLoadingStatements] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Period selection state
   const [primaryPeriod, setPrimaryPeriod] = useState<{
     id: string;
     name: string;
@@ -76,18 +67,80 @@ export default function Home() {
     id: string;
     name: string;
   } | null>(null);
+
+  // Comparison results state
   const [isLoading, setIsLoading] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [comparisonData, setComparisonData] = useState<ComparisonResult | null>(
+    null
+  );
 
-  const handleCompare = () => {
+  // Fetch statements on initial load
+  useEffect(() => {
+    async function fetchStatements() {
+      setIsLoadingStatements(true);
+      setError(null);
+      try {
+        const data = await getStatements();
+        setStatements(data);
+
+        // Only show processed statements in the dropdown
+        const processedStatements = data.filter(
+          (statement) => statement.processed
+        );
+        if (processedStatements.length === 0) {
+          // Start processing unprocessed statements
+          const unprocessedStatements = data.filter(
+            (statement) => !statement.processed
+          );
+          if (unprocessedStatements.length > 0) {
+            console.log(
+              `Processing statement: ${unprocessedStatements[0].filename}`
+            );
+            await processStatement(unprocessedStatements[0].filename);
+          }
+        }
+      } catch (err) {
+        setError("Error loading statements. Please try again.");
+        console.error("Error fetching statements:", err);
+      } finally {
+        setIsLoadingStatements(false);
+      }
+    }
+
+    fetchStatements();
+  }, []);
+
+  // Convert statements to options for the dropdown
+  const statementOptions = statements
+    .filter((statement) => statement.processed)
+    .map((statement) => ({
+      id: statement.filename.replace(".pdf", ""),
+      name: `${statement.month} ${statement.year}`,
+    }));
+
+  // Handle comparison button click
+  const handleCompare = async () => {
     if (!primaryPeriod) return;
 
     setIsLoading(true);
-    // Simulate loading
-    setTimeout(() => {
-      setIsLoading(false);
+    setError(null);
+
+    try {
+      // Make API call to compare statements
+      const result = await compareStatements(
+        primaryPeriod.id,
+        comparisonPeriod?.id
+      );
+
+      setComparisonData(result);
       setShowResults(true);
-    }, 1500);
+    } catch (err) {
+      setError("Error comparing statements. Please try again.");
+      console.error("Error comparing statements:", err);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -109,6 +162,12 @@ export default function Home() {
           </p>
         </header>
 
+        {error && (
+          <div className="bg-red-900/20 border border-red-700 text-red-300 px-4 py-3 rounded-lg mb-6">
+            {error}
+          </div>
+        )}
+
         <div className="bg-slate-800/70 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-700/60 transition-all duration-300 hover:shadow-slate-700/30 hover:border-slate-600/60">
           <div className="p-6 sm:p-8">
             <h2 className="text-xl sm:text-2xl font-semibold text-white mb-8 flex items-center">
@@ -119,22 +178,40 @@ export default function Home() {
             </h2>
 
             <div className="space-y-8">
-              <SelectMenu
-                label="Primary Period"
-                options={periodOptions}
-                value={primaryPeriod}
-                onChange={setPrimaryPeriod}
-                placeholder="Select primary period..."
-              />
+              {isLoadingStatements ? (
+                <div className="py-4 text-center text-slate-400">
+                  <div className="inline-block h-5 w-5 mr-2 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                  Loading statements...
+                </div>
+              ) : (
+                <>
+                  {statementOptions.length === 0 ? (
+                    <div className="py-4 text-center text-slate-400">
+                      No processed statements available. Please check back
+                      later.
+                    </div>
+                  ) : (
+                    <>
+                      <SelectMenu
+                        label="Primary Period"
+                        options={statementOptions}
+                        value={primaryPeriod}
+                        onChange={setPrimaryPeriod}
+                        placeholder="Select primary period..."
+                      />
 
-              <SelectMenu
-                label="Comparison Period"
-                options={comparisonOptions}
-                value={comparisonPeriod}
-                onChange={setComparisonPeriod}
-                optional={true}
-                placeholder="Select period to compare with..."
-              />
+                      <SelectMenu
+                        label="Comparison Period"
+                        options={statementOptions}
+                        value={comparisonPeriod}
+                        onChange={setComparisonPeriod}
+                        optional={true}
+                        placeholder="Select period to compare with..."
+                      />
+                    </>
+                  )}
+                </>
+              )}
             </div>
           </div>
 
@@ -166,10 +243,11 @@ export default function Home() {
           </div>
         </div>
 
-        {showResults && primaryPeriod && (
+        {showResults && primaryPeriod && comparisonData && (
           <ComparisonResults
-            primaryPeriod={primaryPeriod.name}
-            comparisonPeriod={comparisonPeriod?.name}
+            primaryPeriod={comparisonData.primary_period}
+            comparisonPeriod={comparisonData.comparison_period}
+            comparisonData={comparisonData}
           />
         )}
 

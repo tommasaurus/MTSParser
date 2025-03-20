@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "filename": "mts0225.pdf",
+    "month": "February",
+    "year": "2025",
+    "processed_date": "2025-03-19T20:56:07.089093"
+  },
+  "budget_data": {
+    "receipts": {
+      "total": 331298000000
+    },
+    "outlays": {
+      "total": 529196000000
+    },
+    "deficit": 197898000000,
+    "debt": 34799000000000
+  }
+}
